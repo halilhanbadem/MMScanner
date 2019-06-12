@@ -1,7 +1,7 @@
 {
   The author of this library is Halil Han Badem.
   Please do not change this information without permission.
-  This file is free of charge to the developers of Medula.
+  This file is free of charge to the developers of Developers :).
 
   Build Delphi IDE: Delphi 10.3
   Developer by: Halil Han Badem
@@ -20,13 +20,13 @@
   If you own, the paid deploy is strictly prohibited.
   These libraries are distributed free of charge. If you want to support me, please donate through the site! I'd be happy if you donated.
 
-  Uyarı!!!
+  UyarÃ½!!!
 
-  Sahiplenmek, ücretli dağıtmak kesinlikle yasaktır.
-  Bu kütüphaneler ücretsiz olarak dağıtılmaktadır. Bana destek olmak istiyorsanız lütfen site üzerinden bağış yapın! Bağış yaparsanız mutlu olurum.
+  Sahiplenmek, Ã¼cretli daÃ°Ã½tmak kesinlikle yasaktÃ½r.
+  Bu kÃ¼tÃ¼phaneler Ã¼cretsiz olarak daÃ°Ã½tÃ½lmaktadÃ½r. Bana destek olmak istiyorsanÃ½z lÃ¼tfen site Ã¼zerinden baÃ°Ã½Ã¾ yapÃ½n! BaÃ°Ã½Ã¾ yaparsanÃ½z mutlu olurum.
 
   Donate web site: https://halilhanbadem.com
-  Bağış web site: https://halilhanbadem.com
+  BaÃ°Ã½Ã¾ web site: https://halilhanbadem.com
 }
 unit usesMMScanner;
 
@@ -86,7 +86,7 @@ function TMMScanner.ErisimNo(TC, DogumYili: string): string;
 var
   _ErisimNo: String;
 begin
-  Result := 'Erişim no alınamadı!';
+  Result := 'EriÃ¾im no alÃ½namadÃ½!';
   if MMBrowser.LocationURL = 'https://mmtarama.saglik.gov.tr/randevu/erisim-no-ogren'
   then
   begin
@@ -121,7 +121,7 @@ begin
   begin
     _ErisimNo := MMBrowser.OleObject.document.getElementsByClassName('box-body')
       .item(0).innerText;;
-    Result := Trim(Parse(_ErisimNo, 'Erişim No : ', 'TC'));
+    Result := Trim(Parse(_ErisimNo, 'EriÃ¾im No : ', 'TC'));
   end;
 end;
 
@@ -136,9 +136,9 @@ var
 begin
   _ErisimNo := ErisimNo(TC, DogumYili);
 
-  if _ErisimNo = 'Erişim no alınamadı!' then
+  if _ErisimNo = 'EriÃ¾im no alÃ½namadÃ½!' then
   begin
-    ShowMessage('Erişim no alınamadığı için işleminiz gerçekletirilemedi!');
+    ShowMessage('EriÃ¾im no alÃ½namadÃ½Ã°Ã½ iÃ§in iÃ¾leminiz gerÃ§ekletirilemedi!');
     exit;
   end;
 
