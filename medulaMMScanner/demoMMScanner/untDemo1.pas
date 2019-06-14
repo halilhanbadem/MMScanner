@@ -44,19 +44,19 @@ procedure TfrmDemo.btnErisimNoClick(Sender: TObject);
 begin
   try
     buttonReaksiyon(False);
-    btnErisimNo.Caption := 'Lütfen bekleyin!';
+    btnErisimNo.Caption := 'LÃ¼tfen bekleyin!';
     if not Kontrol then
     begin
       exit;
     end;
 
     MessageBox(handle,
-      pChar(edtTC.Text + ' kimlik numaralý hastanýn eriþim numarasý: ' +
-      MMScanner.ErisimNo(edtTC.Text, edtDogumYili.Text)), 'Eriþim No',
+      pChar(edtTC.Text + ' kimlik numaralÃ½ hastanÃ½n eriÃ¾im numarasÃ½: ' +
+      MMScanner.ErisimNo(edtTC.Text, edtDogumYili.Text)), 'EriÃ¾im No',
       MB_OK + MB_ICONINFORMATION);
   finally
     buttonReaksiyon(True);
-    btnErisimNo.Caption := 'Eriþim No Al';
+    btnErisimNo.Caption := 'EriÃ¾im No Al';
   end;
 end;
 
@@ -75,38 +75,28 @@ procedure TfrmDemo.btnSonucGetirClick(Sender: TObject);
 begin
   try
     buttonReaksiyon(False);
-    btnSonucGetir.Caption := 'Lütfen bekleyin!';
+    btnSonucGetir.Caption := 'LÃ¼tfen bekleyin!';
     if not Kontrol then
     begin
       exit;
     end;
 
     MessageBox(handle,
-      pChar(edtTC.Text + ' kimlik numaralý hastanýn MM sonucu: ' +
-      MMScanner.getResult(edtTC.Text, edtDogumYili.Text)), 'Sonuç',
+      pChar(edtTC.Text + ' kimlik numaralÃ½ hastanÃ½n MM sonucu: ' +
+      MMScanner.getResult(edtTC.Text, edtDogumYili.Text)), 'SonuÃ§',
       MB_OK + MB_ICONINFORMATION);
   finally
     buttonReaksiyon(True);
-    btnSonucGetir.Caption := 'Sonuç Getir';
+    btnSonucGetir.Caption := 'SonuÃ§ Getir';
   end;
 end;
 
 procedure TfrmDemo.buttonReaksiyon(param: boolean);
 begin
-  if not param then
-  begin
-    btnErisimNo.Enabled := False;
-    btnSonucGetir.Enabled := False;
-    btnSetBrowser.Enabled := False;
-    btnResetBrowser.Enabled := False;
-  end
-  else if param then
-  begin
-    btnErisimNo.Enabled := True;
-    btnSonucGetir.Enabled := True;
-    btnSetBrowser.Enabled := True;
-    btnResetBrowser.Enabled := True;
-  end;
+    btnErisimNo.Enabled := param;
+    btnSonucGetir.Enabled := param;
+    btnSetBrowser.Enabled := param;
+    btnResetBrowser.Enabled := param;
 end;
 
 procedure TfrmDemo.FormCreate(Sender: TObject);
@@ -125,7 +115,7 @@ begin
     (Length(edtTC.Text) < 11) then
   begin
     MessageBox(handle,
-      'T.C Kimlik numarasý hatalý/eksik veya doðum yýlý eksik girilmiþ!',
+      'T.C Kimlik numarasÃ½ hatalÃ½/eksik veya doÃ°um yÃ½lÃ½ eksik girilmiÃ¾!',
       'Eksik!', MB_OK + MB_ICONERROR);
     Result := False;
   end
